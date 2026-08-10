@@ -1,0 +1,34 @@
+PS C:\Users\Kiran\Desktop\VSEC> git log --oneline
+3b0ee43 (HEAD -> main, origin/main) Deleted commit.txt
+1c5d039 Recreated commit.txt with commit history
+7b8317d Deleted
+789aedd Added text file
+3778db2 Added ASS1
+c055eb1 Added with HTML,CSS,JS
+41a0258 Added ASS4
+4d6f400 Added new_commands.txt file
+0e16d28 Added ASS2 with PDF and screenshot
+PS C:\Users\Kiran\Desktop\VSEC> git checkout 3778db2
+Note: switching to '3778db2'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 3778db2 Added ASS1
+PS C:\Users\Kiran\Desktop\VSEC> git checkout main
+Previous HEAD position was 3778db2 Added ASS1
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Kiran\Desktop\VSEC>

@@ -1,0 +1,19 @@
+PS C:\Users\Kiran\Desktop\VSEC> git commit -m "Added ASS2 with PDF and screenshot"
+[main (root-commit) 0e16d28] Added ASS2 with PDF and screenshot
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ASS2/Git_Commands.pdf
+ create mode 100644 ASS2/git_commands.jpeg
+PS C:\Users\Kiran\Desktop\VSEC> git remote remove origin
+PS C:\Users\Kiran\Desktop\VSEC> git remote add origin https://github.com/mrunmayeeshimpi16/VSEC.git
+PS C:\Users\Kiran\Desktop\VSEC> git push -u origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.05 MiB | 667.00 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/mrunmayeeshimpi16/VSEC.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Kiran\Desktop\VSEC> 
+

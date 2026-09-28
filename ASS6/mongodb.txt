@@ -1,0 +1,175 @@
+MongoDB Operations - College Database
+
+1. Switch to Database
+use('college');
+Output: switched to db college
+
+2. Insert One Document
+db.students.insertOne({
+  name: "Vikram Singh",
+  age: 22,
+  marks: 72,
+  department: "Computer Science",
+  city: "Pune"
+});
+Output:
+
+{
+  acknowledged: true,
+  insertedId: ObjectId('6a867a6a7c5a6121e91891b9')
+}
+3. Insert Many Documents
+db.students.insertMany([
+  { name: "Rahul Sharma", age: 20, marks: 75, department: "Information Technology", city: "Pune" },
+  { name: "Priya Patel", age: 21, marks: 88, department: "Computer Science", city: "Mumbai" },
+  { name: "Amit Kumar", age: 19, marks: 35, department: "Electronics", city: "Pune" },
+  { name: "Sneha Reddy", age: 22, marks: 92, department: "Computer Science", city: "Nashik" },
+  { name: "Rohan Joshi", age: 20, marks: 45, department: "Mechanical", city: "Mumbai" }
+]);
+Output:
+
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('6a867d758fdcabaacaade7f8'),
+    '1': ObjectId('6a867d758fdcabaacaade7f9'),
+    '2': ObjectId('6a867d758fdcabaacaade7fa'),
+    '3': ObjectId('6a867d758fdcabaacaade7fb'),
+    '4': ObjectId('6a867d758fdcabaacaade7fc')
+  }
+}
+4. Find with Marks Condition
+db.students.find({ marks: { $gt: 80 } });
+Output:
+
+[
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7f9'),
+    name: "Priya Patel",
+    age: 21,
+    marks: 88,
+    department: "Computer Science",
+    city: "Mumbai"
+  },
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7fb'),
+    name: "Sneha Reddy",
+    age: 22,
+    marks: 92,
+    department: "Computer Science",
+    city: "Nashik"
+  }
+]
+5. Find with Department Condition
+db.students.find({ department: "Computer Science" });
+Output:
+
+[
+  {
+    _id: ObjectId('6a867a6a7c5a6121e91891b9'),
+    name: "Vikram Singh",
+    age: 22,
+    marks: 72,
+    department: "Computer Science",
+    city: "Pune"
+  },
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7f9'),
+    name: "Priya Patel",
+    age: 21,
+    marks: 88,
+    department: "Computer Science",
+    city: "Mumbai"
+  },
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7fb'),
+    name: "Sneha Reddy",
+    age: 22,
+    marks: 92,
+    department: "Computer Science",
+    city: "Nashik"
+  }
+]
+6. Find with AND Condition (Department and City)
+db.students.find({
+  department: "Computer Science",
+  city: "Mumbai"
+});
+Output:
+
+[
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7f9'),
+    name: "Priya Patel",
+    age: 21,
+    marks: 88,
+    department: "Computer Science",
+    city: "Mumbai"
+  }
+]
+7. Update One Document
+db.students.updateOne(
+  { name: "Amit Kumar" },
+  { $set: { marks: 50, department: "Information Technology" } }
+);
+Output:
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+8. Update Many Documents
+db.students.updateMany(
+  { city: "Pune" },
+  { $set: { city: "Mumbai" } }
+);
+Output:
+
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+9. Delete One Document
+db.students.deleteOne({ name: "Rohan Joshi" });
+Output:
+
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+10. Sort and Display Top 3 Students by Marks
+db.students.find().sort({ marks: -1 }).limit(3);
+Output:
+
+[
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7fb'),
+    name: "Sneha Reddy",
+    age: 22,
+    marks: 92,
+    department: "Computer Science",
+    city: "Nashik"
+  },
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7f9'),
+    name: "Priya Patel",
+    age: 21,
+    marks: 88,
+    department: "Computer Science",
+    city: "Mumbai"
+  },
+  {
+    _id: ObjectId('6a867d758fdcabaacaade7f8'),
+    name: "Rahul Sharma",
+    age: 20,
+    marks: 75,
+    department: "Information Technology",
+    city: "Pune"
+  }
+]

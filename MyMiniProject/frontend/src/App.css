@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px 20px;
+  position: relative;
+  background: #2c1810;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=1920&q=80");
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.5) saturate(0.85);
+  z-index: -1;
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.card {
+  background: rgba(250, 245, 235, 0.94);
+  backdrop-filter: blur(18px);
+  width: 100%;
+  max-width: 720px;
+  padding: 45px 55px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.card h1 {
+  text-align: center;
+  color: #3d2415;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #8b6f4f;
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  color: #8b5a2b;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 22px;
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #e5d5bf;
+}
+
+label {
+  font-weight: 600;
+  color: #4a2c1a;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+  padding: 12px 15px;
+  border: 1.5px solid #e5d5bf;
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  background: #fffdf8;
+  color: #3d2415;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #c9a86a;
+  box-shadow: 0 0 0 4px rgba(201, 168, 106, 0.18);
+}
+
+button {
+  margin-top: 20px;
+  padding: 14px;
+  background: linear-gradient(135deg, #8b5a2b, #c9a86a);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(139, 90, 43, 0.35);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(139, 90, 43, 0.5);
+}
+
+.link-btn {
+  background: transparent;
+  color: #8b5a2b;
+  margin-top: 15px;
+  font-size: 14px;
+  padding: 10px;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.link-btn:hover {
+  background: rgba(201, 168, 106, 0.15);
+  transform: none;
+  box-shadow: none;
+}
+
+.total-box {
+  margin-top: 22px;
+  padding: 15px;
+  background: rgba(201, 168, 106, 0.2);
+  border: 2px dashed #c9a86a;
+  border-radius: 10px;
+  text-align: center;
+  color: #5c3a1a;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.booking-item {
+  background: #fffdf8;
+  border-left: 5px solid #c9a86a;
+  padding: 20px 24px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.booking-item:hover {
+  transform: translateX(6px);
+  box-shadow: 0 10px 25px rgba(139, 90, 43, 0.15);
+}
+
+.booking-item h3 {
+  color: #3d2415;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.booking-item p {
+  color: #5c4a3a;
+  font-size: 13px;
+  margin: 5px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.total-line {
+  color: #8b5a2b !important;
+  font-weight: 700;
+  font-size: 15px !important;
+  margin-top: 10px !important;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #4a90d9, #2c6fa3);
+  flex: 1;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #d9534f, #b0362f);
+  flex: 1;
+  padding: 10px;
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.empty {
+  text-align: center;
+  color: #a89684;
+  padding: 40px 0;
+  font-style: italic;
+}
